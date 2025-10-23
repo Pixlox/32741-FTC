@@ -37,8 +37,22 @@ public class test_motor extends LinearOpMode {
 
         // run until the end of the match (driver presses STOP)
         while (opModeIsActive()) {
-            test_motor.setPower(100);
-            
+
+      
+            // testing goBilda slides           
+            test_motor.setPower(-1.0);
+            telemetry.addData("Action", "Reverse for 2s");
+            telemetry.update();
+            sleep(1700); // 1700 ms = 1.7 seconds
+
+            test_motor.setPower(1.0);
+            telemetry.addData("Action", "Forward for 2s");
+            telemetry.update();
+            sleep(1700);
+
+            test_motor.setPower(0);
+            telemetry.addData("Action", "Stopped");
+            telemetry.update();
             
             
             telemetry.addData("Status", "Running");
